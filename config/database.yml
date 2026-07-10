@@ -1,0 +1,11 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  user: postgres
+  password: 12345678
+  max_connections: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: library_development
